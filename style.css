@@ -1,0 +1,383 @@
+html{
+    background-color: #000;
+    
+}
+body{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}
+.wrapper{
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    margin-top: 200px;
+    perspective: 1000px;
+    perspective-origin: 60% 50%;
+    transform: rotate(-10deg); 
+}
+.wrapper > div{
+    position: relative;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    height: 0;
+}
+
+.sun{
+    width: 250px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 125px !important;
+  
+}
+.sun .star{
+width: 200px;
+height: 200px;
+background-image: url(IMG/sun.png);
+background-size: cover;
+border-radius: 250px;
+margin: 0 auto;
+
+}
+.planet{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+   
+}
+.shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:  url(IMG/shadow.jpg) 0% 0% no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+}
+.mercuru{
+ position: absolute;
+ width: 400px;
+ z-index: 2;
+ animation: orbitmercuru 15s infinite linear;
+ top: -0.7px;
+}
+.mercuru .planet{
+    width: 15px;
+    height: 15px;
+    background-image: url(IMG/2.png) ;
+    animation: anti-spin 15s infinite linear;
+}
+.mercuru .shadow{
+    animation: shadow 15s infinite linear;
+    
+}
+.venus{
+  position: absolute;
+  width: 506px;
+  z-index: 3;
+  animation: orbitvenus 17s infinite linear;
+  top: -19px;
+}
+.venus .planet{
+    width: 38px;
+    height: 38px;
+    background-image: url(IMG/3.png);
+    animation: anti-spin 17s infinite linear;
+}
+.venus .shadow{
+    animation: shadow 17s infinite linear;
+
+}
+.earth{
+    position: absolute;
+    width: 610px;
+    z-index: 4;
+    animation: orbitearth 19s infinite linear;
+    top: -20px;
+}
+.earth .planet{
+    width: 40px;
+    height: 40px;
+    background-image: url(IMG/4.png);
+    animation: anti-spin 19s infinite linear ;
+}
+
+.moon {
+       background: url(IMG/pngegg.png);
+       position: absolute;
+       top: 170px;
+       left: 170px;
+}
+.earth .shadow{
+    animation: shadow 19s infinite linear;
+}
+.mars{
+    position: absolute;
+    width: 706px;
+    z-index: 5;
+    animation: orbitmars 20s infinite linear;
+    top: -11px;
+}
+.mars .planet{
+    width: 22px;
+    height: 22px;
+    background-image: url(IMG/5.png);
+    animation: anti-spin 20s infinite linear ;
+}
+.mars .shadow{
+    animation: 20s infinite linear;
+
+}
+.juputer{
+    position: absolute;
+    width: 1100px;
+    z-index: 6;
+    animation: orbitjuputer 23s infinite linear;
+    top: -64px;
+  
+}
+.juputer .planet{
+    width: 120px;
+    height: 120px;
+    background-image: url(IMG/6.png);
+    animation: anti-spin 23s infinite linear;
+    
+}
+.juputer .shadow{
+    animation: shadow 23s infinite linear;
+}
+.saturun{
+    position: absolute;
+    width: 1200px;
+    z-index: 7;
+    animation: orbitsaturun 25s infinite linear;
+    top: -70px;
+}
+.saturun .planet{
+    width: 160px;
+    height: 80px;
+    background-image: url(IMG/7.png);
+    animation: anti-spin 25s infinite linear;
+    
+}
+.saturun .shadow{
+    animation: shadow 25s infinite linear ;
+}
+.uran{
+    position: absolute;
+    width: 1250px;
+    z-index: 8;
+    animation: orbituran 27s infinite linear;
+    top: -76px;
+}
+.uran .planet{
+    width: 40px;
+    height: 40px;
+    background-image: url(IMG/8.png);
+    animation: anti-spin 27s infinite linear;
+}
+.uran .shadow{
+    animation: shadow 27s infinite linear;
+}
+.neptun{
+    position: absolute;
+    width: 1300px;
+    z-index: 9;
+    animation: orbitneptun 29s infinite linear;
+    top: -82px;
+}
+.neptun .planet{
+    width: 50px;
+    height: 50px;
+    background-image: url(IMG/9.png);
+    animation: anti-spin 29s infinite linear;
+}
+.neptun .shadow{
+    animation: shadow 29s infinite linear;
+}
+@keyframes shadow{
+    0%{
+        background-position: 130% 0%;
+
+    }
+    33%{
+        background-position: 50% 0%;
+        
+    }
+    55%{
+        background-position: 0% 0%;
+        
+    }
+    80%{
+        background-position: -50% 0%;
+        
+    } 100%{
+        background-position: -50% 0%;
+        
+    }
+}
+@keyframes orbitmercuru{
+    0%{
+     z-index: 2;
+     transform: rotateY(0);
+    }
+    49%{
+    z-index: 2;
+    }
+    50%{
+        z-index: -2;
+    }
+    99%{
+        z-index: -2;
+    }
+    100%{
+        z-index: 2;
+        transform: rotateY(360deg);
+    }
+}
+@keyframes orbitvenus{
+    0%{
+        z-index: 3;
+        transform: rotateY(0);
+    }
+    49%{
+        z-index: 3;
+    }
+    50%{
+        z-index: -3;
+    }
+    99%{
+        z-index: -3;
+    }
+    100%{
+        z-index: 3;
+        transform: rotateY(360deg);
+    }
+}
+@keyframes orbitearth{
+    0%{
+        z-index: 4;
+        transform: rotateY(0);
+    }
+    49%{
+        z-index: 4;
+    }
+    50%{
+        z-index: -4;
+    }
+    99%{
+        z-index: -4;
+    }
+    100%{
+        z-index: 4;
+        transform: rotateY(360deg);
+    }
+}
+@keyframes orbitmars{
+    0%{
+        z-index: 5;
+        transform: rotateY(0);
+    }
+    49%{
+        z-index: 5;
+    }
+    50%{
+        z-index: -5;
+    }
+    99%{
+        z-index: -5;
+    }
+    100%{
+        z-index: 5;
+        transform: rotateY(360deg);
+    }
+}
+@keyframes orbitjuputer{
+    0%{
+        z-index: 6;
+        transform: rotateY(0);
+    }
+    49%{
+        z-index: 6;
+    }
+    50%{
+        z-index: -6;
+    }
+    99%{
+        z-index: -6;
+    }
+    100%{
+        z-index: 6;
+        transform: rotateY(360deg);
+    }
+}
+@keyframes orbitsaturun{
+    0%{
+        z-index: 7;
+        transform: rotateY(0);
+    }
+    49%{
+        z-index: 7;
+    }
+    50%{
+        z-index: -7;
+    }
+    99%{
+        z-index: -7;
+    }
+    100%{
+        z-index: 7;
+        transform: rotateY(360deg);
+    }
+}
+@keyframes orbituran{
+    0%{
+        z-index: 8;
+        transform: rotateY(0);
+    }
+    49%{
+        z-index: 8;
+    }
+    50%{
+        z-index: -8;
+    }
+    99%{
+        z-index: -8;
+    }
+    100%{
+        z-index: 8;
+        transform: rotateY(360deg);
+    }
+}
+@keyframes orbitneptun{
+    0%{
+        z-index: 9;
+        transform: rotateY(0);
+    }
+    49%{
+        z-index: 9;
+    }
+    50%{
+        z-index: -9;
+    }
+    99%{
+        z-index: -9;
+    }
+    100%{
+        z-index: 9;
+        transform: rotateY(360deg);
+    }
+}
+@keyframes anti-spin{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
